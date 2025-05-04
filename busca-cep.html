@@ -35,6 +35,7 @@
             <input name="uf" type="text" id="uf" size="2" /><br />
             <div id="cep-nao-encontrado" class="alert alert-danger">CEP não encontrado.</div>
             <div id="mensagem-sucesso" class="alert alert-success">Acesso criado com sucesso!</div>
+            <div id="mensagem-erro-campos" class="alert alert-danger">Por favor, preencha todos os campos obrigatórios.</div>
             <button type="button" class="btn btn-secondary" id="btn-enviar">Enviar</button>
         </form>
     </div>
@@ -84,12 +85,27 @@
             });
 
             $("#btn-enviar").click(function() {
-                $("#mensagem-sucesso").fadeIn(); // Mostra a mensagem de sucesso
+                var nome = $("#nome").val();
+                var telefone = $("#telefone").val();
+                var email = $("#email").val();
+                var cep = $("#cep").val();
+                var rua = $("#rua").val();
+                var numero = $("#numero").val();
+                var cidade = $("#cidade").val();
+                var uf = $("#uf").val();
+
+                if (nome === "" || telefone === "" || email === "" || cep === "" || rua === "" || numero === "" || cidade === "" || uf === "") {
+                    $("#mensagem-erro-campos").show(); 
+                    return; 
+                }
+
+                $("#mensagem-sucesso").fadeIn();
                 setTimeout(function() {
-                    $("#mensagem-sucesso").fadeOut(); // Esconde a mensagem após alguns segundos
-                }, 3000); // 3 segundos
+                    $("#mensagem-sucesso").fadeOut();
+                }, 3000);
             });
         });
     </script>
 </body>
 </html>
+
