@@ -1,45 +1,61 @@
-# BuscaCep
+BuscaCEP
 
-This is a simple web application that allows users to search for addresses based on Brazilian ZIP codes (CEP).  It utilizes the ViaCEP web service to retrieve address information.
+Este é um aplicativo web simples que permite aos usuários buscar endereços com base no CEP brasileiro. A aplicação utiliza o serviço web ViaCEP para obter as informações de endereço.
 
-# Features
-- Form Input: Provides fields for user information (Name, Phone, Email) and address details (CEP, Street, Neighborhood, Number, City, State).
+✨ Funcionalidades
 
-- CEP Lookup: When a user enters a CEP and leaves the CEP input field, the application automatically queries the ViaCEP service.
+Formulário de Entrada:
+Possui campos para informações do usuário (Nome, Telefone, Email) e dados de endereço (CEP, Rua, Bairro, Número, Cidade, Estado).
 
-- Address Auto-fill: If a valid CEP is provided, the Street, Neighborhood, City, and State fields are automatically populated with the retrieved address data.
+Consulta de CEP:
+Ao inserir um CEP e sair do campo (evento blur), a aplicação realiza automaticamente uma requisição ao serviço ViaCEP.
 
-- Error Handling: Displays an alert message if the CEP is invalid or not found in the ViaCEP database.
+Preenchimento Automático:
+Se o CEP for válido, os campos de Rua, Bairro, Cidade e Estado são preenchidos automaticamente com os dados retornados pela API.
 
-- Clear Form Functionality: Clears the address fields if the CEP is invalid or empty.
+Tratamento de Erros:
+Exibe uma mensagem de alerta caso o CEP seja inválido ou não seja encontrado na base de dados do ViaCEP.
 
-- Dependencies: jQuery:  Included from a CDN.
+Limpeza Automática do Formulário:
+Os campos de endereço são limpos caso o CEP esteja vazio ou inválido.
 
-# Technologies Used
-- HTML: For the structure of the web page and form.
+📦 Dependências
 
-- JavaScript: For handling user interactions, making AJAX requests to the ViaCEP service, and manipulating the DOM.
+jQuery (incluído via CDN)
 
-- jQuery: A JavaScript library used to simplify DOM manipulation and AJAX requests.
+🛠️ Tecnologias Utilizadas
 
-- ViaCEP API: A web service (viacep.com.br) used to retrieve address information from a CEP.
+HTML – Estrutura da página e do formulário
 
-# How to Use
-Open the HTML file: Open busca-cep.html in your web browser.
+JavaScript – Manipulação do DOM, requisições AJAX e interações do usuário
 
-Enter User Information: Fill in the "Name", "Phone", and "Email" fields. The "Phone" field is required and has a placeholder for the format.
+jQuery – Simplificação da manipulação do DOM e requisições AJAX
 
-Enter the CEP: Type the Brazilian ZIP code (CEP) in the "Cep" field.
+ViaCEP API – Serviço web (viacep.com.br) para consulta de endereços a partir do CEP
 
-Trigger the Lookup: Click outside the "Cep" field (or press Tab) to trigger the address lookup.
+🚀 Como Utilizar
 
-View Results:
+Abra o arquivo busca-cep.html no navegador.
 
-If the CEP is valid, the address fields (Street, Neighborhood, City, State) will be automatically filled.
+Preencha as informações do usuário:
 
-If the CEP is invalid or not found, an alert message will be displayed, and the address fields will be cleared.
+Nome
 
-Fill in Additional Details: Complete the "Number" field.
+Telefone (campo obrigatório, com formato sugerido)
 
-Submit (Optional): The "Enviar" button does not currently have any functionality in the provided code.  It would need to be linked to a server-side script to process the form data.
-  
+Email
+
+Digite o CEP no campo correspondente.
+
+Saia do campo CEP (clicando fora ou pressionando Tab) para disparar a consulta automática.
+
+Visualize os resultados:
+
+Se o CEP for válido, os campos de endereço serão preenchidos automaticamente.
+
+Se o CEP for inválido ou não encontrado, será exibido um alerta e os campos serão limpos.
+
+Complete o campo “Número”.
+
+Botão “Enviar”:
+Atualmente não possui funcionalidade. Para que o envio funcione, seria necessário integrar a aplicação com um script back-end para processar os dados do formulário.
